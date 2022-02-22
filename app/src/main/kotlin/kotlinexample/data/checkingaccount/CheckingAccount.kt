@@ -8,6 +8,10 @@ class CheckingAccount(
 ) : Account {
   val balance: Int get() = this._balance
 
+  override fun hasBalance(amount: Int): Boolean {
+    return balance >= amount
+  }
+
   override fun increasesBalance(amount: Int) {
     _balance += amount
   }
