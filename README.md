@@ -1,3 +1,10 @@
+# DCI Architecture
+
+## References
+
+- [The DCI Architecture: A New Vision of Object-Oriented Programming](https://www.artima.com/articles/the-dci-architecture-a-new-vision-of-object-oriented-programming)
+- [DCI Examples](http://fulloo.info/Examples/)
+
 # How to execute
 
 ```
