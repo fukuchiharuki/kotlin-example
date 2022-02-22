@@ -1,13 +1,13 @@
 package kotlinexample.interaction.transfer
 
 class TransferContext(
-  private val roleMappings: List<TransferRoleCasting>
+  private val castings: List<TransferRoleCasting>
 ) {
-  fun useSource(roleOrder: TransferRoleOrder) = roleMappings
-    .first { roleOrder.isMeantFor(it) }
-    .useSource(roleOrder)
+  fun useSource(roleOrder: TransferRoleOrder) = castings
+    .mapNotNull { it.useSource(roleOrder) }
+    .first()
 
-  fun useDestination(roleOrder: TransferRoleOrder) = roleMappings
-    .first { roleOrder.isMeantFor(it) }
-    .useDestination(roleOrder)
+  fun useDestination(roleOrder: TransferRoleOrder) = castings
+    .mapNotNull { it.useDestination(roleOrder) }
+    .first()
 }
