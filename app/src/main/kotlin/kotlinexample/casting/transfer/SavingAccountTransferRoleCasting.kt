@@ -6,7 +6,7 @@ import kotlinexample.interaction.transfer.TransferRoleOrder
 
 class SavingAccountTransferRoleCasting(
   private val repository: SavingAccountRepository
-) : TransferRoleCasting, SavingAccountTransferRoleActing {
+) : TransferRoleCasting, AccountTransferRoleActing {
   companion object {
     fun roleOrder(name: String): TransferRoleOrder = object : TransferRoleOrder {
       override fun isMeantFor(roleCasting: TransferRoleCasting) = roleCasting is SavingAccountTransferRoleCasting
